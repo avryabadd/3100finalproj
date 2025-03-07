@@ -9,18 +9,29 @@
 <body>
     <!--Start the card body for student registration-->
     <div class="d-flex justify-content-center">
-        <form class="card col-12 col-md-4 col-lg-6">
-            <h1 class ="text-center">Student Registration</h1>
+        <form class="card col-12 col-md-4 col-lg-6 mt-4">
+            <h1 class ="text-center mt-2">Student Registration</h1>
+
+            <label for="txtFirstName">First Name</label>
             <input id="txtFirstName" class="form-control mt-2" type="text" aria-label="firstname" placeholder="ex. John">
+
+            <label for="txtLastName">Last Name</label>
             <input id="txtLastName" class="form-control mt-2" type="text" aria-label="lastname" placeholder="ex. Doe">
+
+            <label for="txtEmail"> Email </label>
             <input id="txtEmail" class="form-control mt-2" type="email" aria="email" placeholder="johndoe@example.com">
+
+            <label for="txtPassword">Password </label>
             <input id="txtPassword" class="form-control mt-2" type="password" aria="password" placeholder="Password">
+
+            <label for="txtPassword">Confirm Password </label>
             <input id="txtConfirmPassword" class="form-control mt-2" type="password" aria="password" placeholder="Confirm Password">
+            
             <h1>Contact Info</h1>
+            <input id="inputDiscord" class="form-control mt-2" type="text" aria-label="discord" placeholder="Discord Account">
+
             <button id="studentRegister" type="button" class="btn-success mt-2"> Register </button>
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
-            <button id="instructorSwitch" type="button" class="btn btn-link mt-1 mb-3"> Instructor? Click Here </button>
-
 
 
 
