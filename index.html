@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Proj</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
 </head>
 <body>
     <!--Start the card body for student registration-->
     <div class="d-flex justify-content-center">
         <form class="card col-12 col-md-4 col-lg-6 mt-4">
-            <h1 class ="text-center mt-2">Student Registration</h1>
 
-            <label for="txtFirstName">First Name</label>
-            <input id="txtFirstName" class="form-control mt-2" type="text" aria-label="firstname" placeholder="ex. John">
+            <h1 class="text-center mt-2 mb-3 fw-bold text-primary">Student Registration</h1>
 
-            <label for="txtLastName">Last Name</label>
-            <input id="txtLastName" class="form-control mt-2" type="text" aria-label="lastname" placeholder="ex. Doe">
+            <label for="txtFirstName" class="required">First Name</label>
+            <input id="txtFirstName" class="form-control" type="text" aria-label="firstname" placeholder="ex. John">
 
-            <label for="txtEmail"> Email </label>
-            <input id="txtEmail" class="form-control mt-2" type="email" aria="email" placeholder="johndoe@example.com">
+            <label for="txtLastName" class="required">Last Name</label>
+            <input id="txtLastName" class="form-control" type="text" aria-label="lastname" placeholder="ex. Doe">
 
-            <label for="txtPassword">Password </label>
-            <input id="txtPassword" class="form-control mt-2" type="password" aria="password" placeholder="Password">
+            <label for="txtEmail" class="required"> Email </label>
+            <input id="txtEmail" class="form-control" type="email" aria="email" placeholder="johndoe@example.com">
 
-            <label for="txtPassword">Confirm Password </label>
-            <input id="txtConfirmPassword" class="form-control mt-2" type="password" aria="password" placeholder="Confirm Password">
-            
+            <label for="txtPassword" class="required">Password </label>
+            <input id="txtPassword" class="form-control" type="password" aria="password" placeholder="Password">
+
+            <label for="txtPassword" class="required">Confirm Password </label>
+            <input id="txtConfirmPassword" class="form-control" type="password" aria="password" placeholder="Confirm Password">
+
             <h1>Contact Info</h1>
-            <input id="inputDiscord" class="form-control mt-2" type="text" aria-label="discord" placeholder="Discord Account">
+            <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord Account">
 
             <button id="studentRegister" type="button" class="btn-success mt-2"> Register </button>
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
