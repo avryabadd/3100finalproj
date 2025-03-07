@@ -10,7 +10,21 @@
 <body>
     <!--Start the card body for student registration-->
     <div class="d-flex justify-content-center">
-        <form class="card col-12 col-md-4 col-lg-6 mt-4">
+
+        <form class="card col-12 col-md-5 col-lg-4" id="frmLogin">
+            <div class="card-body">
+                <h1 class="text-center mb-0 text-primary">Login Page</h1>
+
+                <h3 class="text-center mb-4">Login</h3>
+                <input id="text-LoginUsername" class="form-control" type="email" placeholder="user@email.com" aria-label="email">
+                <input id="text-LoginPassword" class="form-control mt-2" type="password" placeholder="password" aria-label="password">
+               
+                <button class="btn btn-primary col-12 mt-2" type="button" id="btnLogin">Log In</button>
+                <button class="btn btn-link col-12 mt-0" type="button" id="btnSwapRegister">Need an account, register here</button>
+            </div>
+        </form>
+
+        <form id="frmRegister" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
 
             <h1 class="text-center mt-2 mb-3 fw-bold text-primary">Student Registration</h1>
 
@@ -32,14 +46,16 @@
             <h1>Contact Info</h1>
             <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord Account">
 
-            <button id="studentRegister" type="button" class="btn-success mt-2"> Register </button>
+            <button id="studentRegister" type="button" class="btn-primary mt-2"> Register </button>
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
-
-
 
         </form>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="loginregister.js"></script>
+
 </body>
 </html>
