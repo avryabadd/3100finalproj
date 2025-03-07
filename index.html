@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
 </head>
 <body>
+    <!--Start the card body for student registration-->
     <div class="d-flex justify-content-center">
-        <form class="card">
-            <h1>testing</h1>
+        <form class="card col-12 col-md-4 col-lg-6">
+            <h1 class ="text-center">Student Registration</h1>
+            <input id="txtFirstName" class="form-control mt-2" type="text" aria-label="firstname" placeholder="ex. John">
+            <input id="txtLastName" class="form-control mt-2" type="text" aria-label="lastname" placeholder="ex. Doe">
+            <input id="txtEmail" class="form-control mt-2" type="email" aria="email" placeholder="johndoe@example.com">
+            <input id="txtPassword" class="form-control mt-2" type="password" aria="password" placeholder="Password">
+            <input id="txtConfirmPassword" class="form-control mt-2" type="password" aria="password" placeholder="Confirm Password">
+            <h1>Contact Info</h1>
+            <button id="studentRegister" type="button" class="btn-success mt-2"> Register </button>
+            <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
+            <button id="instructorSwitch" type="button" class="btn btn-link mt-1 mb-3"> Instructor? Click Here </button>
+
+
+
+
         </form>
     </div>
 
