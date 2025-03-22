@@ -7,6 +7,28 @@ $('#btnSwapRegister').on('click',function(){
     $('#frmLogin').slideUp('slow')
     $('#frmRegister').slideDown('fast')
 })
+
+document.querySelector("#togglePassword_Login").addEventListener("click", () => {
+    const passwordInput = document.querySelector("#text-LoginPassword");
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    document.querySelector("#togglePassword_Login").textContent = isPassword ? "Hide Password" : "Show Password";
+  });
+
+document.querySelector("#togglePassword_Register").addEventListener("click", () => {
+    const passwordInput = document.querySelector("#txtPassword");
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    document.querySelector("#togglePassword_Register").textContent = isPassword ? "Hide Password" : "Show Password";
+    });
+
+document.querySelector("#toggleConfirmPassword_Register").addEventListener("click", () => {
+    const passwordInput = document.querySelector("#txtConfirmPassword");
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    document.querySelector("#toggleConfirmPassword_Register").textContent = isPassword ? "Hide Password" : "Show Password";
+    });
+    
 document.querySelector("#studentRegister").addEventListener("click", () => {
     const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     const regDiscord = /^(?:[a-z0-9](?:[a-z0-9_]{1,31})|.{2,32}#[0-9]{4})$/
@@ -25,6 +47,11 @@ document.querySelector("#studentRegister").addEventListener("click", () => {
     if(strPassword.length < 1){
         blnError = true
         strMessage += '<p class="mb-0 mt-0">Password Cannot Be Blank</p>'
+    }
+    else if((strPassword.length < 8) || (strPassword.length > 64) )
+    {
+        blnError = true
+        strMessage += '<p class="mb-0 mt-0">Password must be between 8 and 64 characters </p>'
     }
     else
     {
@@ -74,6 +101,11 @@ document.querySelector("#btnLogin").addEventListener("click", () => {
     if(strPassword.length < 1){
         blnError = true
         strMessage += '<p class="mb-0 mt-0">Password Cannot Be Blank</p>'
+    }
+    else if((strPassword.length < 8) || (strPassword.length > 64) )
+    {
+        blnError = true
+        strMessage += '<p class="mb-0 mt-0">Password must be between 8 and 64 characters </p>'
     }
     if(blnError){
         Swal.fire({
