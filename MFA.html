@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Firebase Auth: Email & Phone</title>
+  <script type="module" defer src="mfa.js"></script>
+</head>
+<body>
+  <h1>🔐 Firebase Authentication</h1>
+
+  <!-- 🔹 EMAIL AUTH SECTION -->
+  <h2>Email Authentication</h2>
+  <input type="email" id="email" placeholder="Enter email">
+  <input type="password" id="password" placeholder="Enter password">
+  <button id="signupBtn">Sign Up</button>
+  <button id="loginBtn">Log In</button>
+  <p id="emailMessage"></p>
+
+  <hr>
+
+  <!-- 🔹 PHONE AUTH SECTION -->
+  <h2>Phone Authentication</h2>
+  <input type="text" id="phoneNumber" placeholder="+15555550123">
+  <div id="recaptcha-container"></div>
+  <button id="sendCodeBtn">Send Code</button>
+
+  <br><br>
+
+  <input type="text" id="verificationCode" placeholder="Enter code from SMS">
+  <button id="verifyCodeBtn">Verify Code</button>
+  <p id="phoneMessage"></p>
+</body>
+</html>
