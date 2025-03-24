@@ -18,7 +18,7 @@
                 <h3 class="text-center mb-4">Login</h3>
                 <input id="text-LoginUsername" class="form-control" type="email" placeholder="user@email.com" aria-label="email">
                 <input id="text-LoginPassword" class="form-control mt-2" type="password" placeholder="password" aria-label="password">
-                <button type="button" id="togglePassword_Login" class="btn btn-outline-light">Show Password</button>
+                <button type="button" id="togglePassword_Login" class="btn btn-outline-light mt-2">Show Password</button>
                 <button class="btn btn-primary col-12 mt-2" type="button" id="btnLogin">Log In</button>
                 <button class="btn btn-link col-12 mt-0" type="button" id="btnSwapRegister">Need an account, register here</button>
             </div>
@@ -31,22 +31,32 @@
             <label for="txtFirstName" class="required">First Name</label>
             <input id="txtFirstName" class="form-control" type="text" aria-label="firstname" placeholder="ex. John">
 
-            <label for="txtLastName" class="required">Last Name</label>
+            <label for="txtLastName" class="required mt-1">Last Name</label>
             <input id="txtLastName" class="form-control" type="text" aria-label="lastname" placeholder="ex. Doe">
 
-            <label for="txtEmail" class="required"> Email </label>
+            <label for="txtEmail" class="required mt-1"> Email </label>
             <input id="txtEmail" class="form-control" type="email" aria="email" placeholder="johndoe@example.com">
 
-            <label for="txtPassword" class="required">Password </label>
+            <label for="txtPassword" class="required mt-1">Password </label>
             <input id="txtPassword" class="form-control" type="password" aria="password" placeholder="Password">
             <button type="button" id="togglePassword_Register" class="btn btn-outline-light">Show Password</button>
 
-            <label for="txtConfirmPassword" class="required">Confirm Password </label>
+            <label for="txtConfirmPassword" class="required mt-1">Confirm Password </label>
             <input id="txtConfirmPassword" class="form-control" type="password" aria="password" placeholder="Confirm Password">
             <button type="button" id="toggleConfirmPassword_Register" class="btn btn-outline-light">Show Password</button>
 
             <h1>Contact Info</h1>
-            <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord Account">
+    
+
+            <label for="phone" class="required mt-1">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-451-6782" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <small>Format: 123-456-7890</small>
+
+            <label for="inputDiscord" class="mt-1">Discord</label>
+            <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord User">
+
+            <label for="inputTeams" class="mt-1">Teams</label>
+            <input id="inputTeams" class="form-control" type="text" aria-label="Teams" placeholder="Teams User">
 
             <button id="studentRegister" type="button" class="btn-primary mt-2"> Register </button>
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>

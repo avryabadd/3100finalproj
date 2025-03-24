@@ -32,11 +32,13 @@ document.querySelector("#toggleConfirmPassword_Register").addEventListener("clic
 document.querySelector("#studentRegister").addEventListener("click", () => {
     const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     const regDiscord = /^(?:[a-z0-9](?:[a-z0-9_]{1,31})|.{2,32}#[0-9]{4})$/
+    const regPhone = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
     let strEmail = $('#txtEmail').val()
     let strPassword = $('#txtPassword').val().trim()
     let strFirstName = $('#txtFirstName').val().trim()
     let strLastName = $('#txtLastName').val().trim()
     let strConfirmPassword = $('#txtConfirmPassword').val().trim()
+    let phone = $('#phone').val().trim();
     let strDiscord = $('#inputDiscord').val().trim()
     let blnError = false
     let strMessage = ''
@@ -74,6 +76,12 @@ document.querySelector("#studentRegister").addEventListener("click", () => {
             strMessage += '<p  class="mb-0 mt-0">Discord info must be a proper Discord</p>'
         }
     }
+    
+    if(!regPhone.test(phone)){
+        blnError = true;
+        strMessage += '<p class="mb-0 mt-0">Phone number must be in format 123-456-7890</p>';
+    }
+
     if(blnError){
         Swal.fire({
             title: "Oh no, you have an error!",
