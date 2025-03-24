@@ -9,16 +9,16 @@
 </head>
 <body>
     <!--Start the card body for student registration-->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-center vh-100">
 
         <form class="card col-12 col-md-5 col-lg-4" id="frmLogin">
             <div class="card-body">
-                <h1 class="text-center mb-0 text-primary">Login Page</h1>
+                <h1 class="text-center mb-0 text-primary">RateMyGroup</h1>
 
                 <h3 class="text-center mb-4">Login</h3>
                 <input id="text-LoginUsername" class="form-control" type="email" placeholder="user@email.com" aria-label="email">
                 <input id="text-LoginPassword" class="form-control mt-2" type="password" placeholder="password" aria-label="password">
-                <button type="button" id="togglePassword_Login">Show Password</button>
+                <button type="button" id="togglePassword_Login" class="btn btn-outline-light">Show Password</button>
                 <button class="btn btn-primary col-12 mt-2" type="button" id="btnLogin">Log In</button>
                 <button class="btn btn-link col-12 mt-0" type="button" id="btnSwapRegister">Need an account, register here</button>
             </div>
@@ -26,7 +26,7 @@
 
         <form id="frmRegister" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
 
-            <h1 class="text-center mt-2 mb-3 fw-bold text-primary">Student Registration</h1>
+            <h1 class="text-center mt-2 mb-3 fw-bold text-primary">RateMyGroup</h1>
 
             <label for="txtFirstName" class="required">First Name</label>
             <input id="txtFirstName" class="form-control" type="text" aria-label="firstname" placeholder="ex. John">
@@ -39,11 +39,11 @@
 
             <label for="txtPassword" class="required">Password </label>
             <input id="txtPassword" class="form-control" type="password" aria="password" placeholder="Password">
-            <button type="button" id="togglePassword_Register">Show Password</button>
+            <button type="button" id="togglePassword_Register" class="btn btn-outline-light">Show Password</button>
 
             <label for="txtConfirmPassword" class="required">Confirm Password </label>
             <input id="txtConfirmPassword" class="form-control" type="password" aria="password" placeholder="Confirm Password">
-            <button type="button" id="toggleConfirmPassword_Register">Show Password</button>
+            <button type="button" id="toggleConfirmPassword_Register" class="btn btn-outline-light">Show Password</button>
 
             <h1>Contact Info</h1>
             <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord Account">
