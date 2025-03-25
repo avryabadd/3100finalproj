@@ -30,27 +30,31 @@
 
             <label for="txtFirstName" class="required">First Name</label>
             <input id="txtFirstName" class="form-control" type="text" aria-label="firstname" placeholder="ex. John">
+            <div class="invalid-feedback">First name cannot be blank</div>
 
             <label for="txtLastName" class="required mt-1">Last Name</label>
             <input id="txtLastName" class="form-control" type="text" aria-label="lastname" placeholder="ex. Doe">
+            <div class="invalid-feedback">Last name cannot be blank</div>
 
             <label for="txtEmail" class="required mt-1"> Email </label>
             <input id="txtEmail" class="form-control" type="email" aria="email" placeholder="johndoe@example.com">
+            <div class="invalid-feedback">Please enter a valid email</div>
 
             <label for="txtPassword" class="required mt-1">Password </label>
             <input id="txtPassword" class="form-control" type="password" aria="password" placeholder="Password">
             <button type="button" id="togglePassword_Register" class="btn btn-outline-light">Show Password</button>
+            <div class="invalid-feedback">Invalid Discord format</div>
 
             <label for="txtConfirmPassword" class="required mt-1">Confirm Password </label>
             <input id="txtConfirmPassword" class="form-control" type="password" aria="password" placeholder="Confirm Password">
+            <div class="invalid-feedback">Passwords must match</div>
             <button type="button" id="toggleConfirmPassword_Register" class="btn btn-outline-light">Show Password</button>
 
             <h1>Contact Info</h1>
-    
 
             <label for="phone" class="required mt-1">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="123-451-6782" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-            <small>Format: 123-456-7890</small>
+            <input type="tel" id="telPhone" class="form-control" placeholder="123-451-6782" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <div class="invalid-feedback">Phone number must be in format 123-456-7890</div>
 
             <label for="inputDiscord" class="mt-1">Discord</label>
             <input id="inputDiscord" class="form-control" type="text" aria-label="discord" placeholder="Discord User">
