@@ -1,12 +1,3 @@
-$('#btnStudentLoginSwitch').on('click',function(){
-    $('#frmRegister').slideUp('slow')
-    $('#frmLogin').slideDown('fast')
-})
-
-$('#btnSwapRegister').on('click',function(){
-    $('#frmLogin').slideUp('slow')
-    $('#frmRegister').slideDown('fast')
-})
 
 document.querySelector("#togglePassword_Login").addEventListener("click", () => {
     const passwordInput = document.querySelector("#text-LoginPassword");
@@ -141,6 +132,8 @@ document.querySelector("#btnLogin").addEventListener("click", () => {
         Swal.fire({
             title: "All credentials have be validated",
             icon: "success"
+        }).then(() => {
+            loadPage("frmHomePage","frmLogin")
         })
     }
 })
