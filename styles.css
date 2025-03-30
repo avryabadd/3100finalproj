@@ -10,3 +10,7 @@
     width: 100%;
     max-width: 500px;
   }
+  
+  #btnSelectInstructor + #btnSelectStudent {
+    margin-left: 1rem;
+  }

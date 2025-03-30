@@ -134,6 +134,8 @@ document.querySelector("#btnLogin").addEventListener("click", () => {
             icon: "success"
         }).then(() => {
             loadPage("frmHomePage","frmLogin")
+            localStorage.setItem("isLoggedIn", 'true')
+            localStorage.setItem('userEmail', strEmail)
         })
     }
 })

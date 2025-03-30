@@ -66,10 +66,25 @@
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
 
         </form>
-
         <form id="frmHomePage" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
-            <h1>hi</h1>
+            <h1 class="text-center text-primary mb-4">Choose your role</h1>
+            <div class="d-flex justify-content-center">
+                <button id="btnSelectInstructor" type="button" class="btn btn-primary btn-lg px-5"> Instructor </button>
+                <button id="btnSelectStudent" type="button" class="btn btn-primary btn-lg px-5"> Student </button>
+            </div>
+            <button type="button" class="btn btn-outline-danger mt-4 logout-btn">Logout</button>
         </form>
+
+        <form id="frmStudentPage" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
+            <h1 class="text-center text-primary mb-4">Hi Student</h1>
+            <button type="button" class="btn btn-outline-danger mt-4 logout-btn">Logout</button>
+        </form>
+
+        <form id="frmInstructorPage" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
+            <h1 class="text-center text-primary mb-4">Hi instructor</h1>
+            <button type="button" class="btn btn-outline-danger mt-4 logout-btn">Logout</button>
+        </form>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
