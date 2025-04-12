@@ -1,4 +1,5 @@
-strCurrentPage = "frmLogin"
+let strCurrentPage = "frmLogin"
+let strCurrentInstructorPage="Instructor-page-dashboard"
 $('#btnStudentLoginSwitch').on('click',function(){
     loadPage("frmLogin","frmRegister")
 })
@@ -14,6 +15,7 @@ $('#btnSelectStudent').on('click',function(){
 })
 $(document).on('click','.logout-btn',function(){
    loadPage("frmLogin",strCurrentPage)
+   localStorage.setItem('isLoggedIn','false') 
 })
 function loadPage(strnewpage,stroldpage){
     $(`#${stroldpage}`).slideUp('slow')
@@ -23,7 +25,41 @@ function loadPage(strnewpage,stroldpage){
 }
 window.addEventListener('load', () => {
     const strLoggedIn = localStorage.getItem('isLoggedIn')
-    // if (strLoggedIn == 'true') {
-    // loadPage("frmHomePage","frmLogin")
-    // }
+    if (strLoggedIn == 'true') {
+    loadPage("frmHomePage","frmLogin")
+    }
+})
+
+
+function loadPage_instructor(strnewpage,stroldpage)
+{
+    $(`#${stroldpage}`).slideUp('slow')
+    $(`#${strnewpage}`).slideDown('fast')
+    strCurrentInstructorPage = strnewpage
+}
+
+$('#Btn_Instructor_dashboard').on('click',function(){
+    loadPage_instructor("Instructor-page-dashboard",strCurrentInstructorPage)
+    console.log(strCurrentInstructorPage)
+})
+
+$('#Btn_Instructor_courses').on('click',function(){
+    loadPage_instructor("Instructor-page-courses",strCurrentInstructorPage)
+    console.log(strCurrentInstructorPage)
+})
+
+$('#Btn_Instructor_students').on('click',function(){
+    loadPage_instructor("Instructor-page-students",strCurrentInstructorPage)
+})
+
+$('#Btn_Instructor_teams').on('click',function(){
+    loadPage_instructor("Instructor-page-teams",strCurrentInstructorPage)
+})
+
+$('#Btn_Instructor_reviews').on('click',function(){
+    loadPage_instructor("Instructor-page-reviews",strCurrentInstructorPage)
+})
+
+$('#Btn_Instructor_reports').on('click',function(){
+    loadPage_instructor("Instructor-page-reports",strCurrentInstructorPage)
 })
