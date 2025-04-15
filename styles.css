@@ -14,3 +14,10 @@
   #btnSelectInstructor + #btnSelectStudent {
     margin-left: 1rem;
   }
+
+  #sidebar .btn.active {
+    background-color: #0d6efd !important;  /* Bootstrap primary */
+    color: white;
+    border-radius: 10px;
+  }
+  

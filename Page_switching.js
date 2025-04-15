@@ -40,26 +40,42 @@ function loadPage_instructor(strnewpage,stroldpage)
 
 $('#Btn_Instructor_dashboard').on('click',function(){
     loadPage_instructor("Instructor-page-dashboard",strCurrentInstructorPage)
-    console.log(strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
 
 $('#Btn_Instructor_courses').on('click',function(){
     loadPage_instructor("Instructor-page-courses",strCurrentInstructorPage)
-    console.log(strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
 
 $('#Btn_Instructor_students').on('click',function(){
     loadPage_instructor("Instructor-page-students",strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
 
 $('#Btn_Instructor_teams').on('click',function(){
     loadPage_instructor("Instructor-page-teams",strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
 
 $('#Btn_Instructor_reviews').on('click',function(){
     loadPage_instructor("Instructor-page-reviews",strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
 
 $('#Btn_Instructor_reports').on('click',function(){
     loadPage_instructor("Instructor-page-reports",strCurrentInstructorPage)
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
 })
+$('#Btn_Instructor_review_reviews').on('click', function () {
+    loadPage_instructor("Instructor-page-review-reviews", strCurrentInstructorPage);
+    $('#sidebar .btn').removeClass('active');
+    $(this).addClass('active');
+  });
+  
