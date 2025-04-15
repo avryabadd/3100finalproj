@@ -1,4 +1,3 @@
-
 document.querySelector("#togglePassword_Login").addEventListener("click", () => {
     const passwordInput = document.querySelector("#text-LoginPassword");
     const isPassword = passwordInput.type === "password";
@@ -102,6 +101,7 @@ document.querySelector("#studentRegister").addEventListener("click", () => {
         })
     }
 })
+
 document.querySelector("#btnLogin").addEventListener("click", () => {
     const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     let strEmail = $('#text-LoginUsername').val()
@@ -133,9 +133,10 @@ document.querySelector("#btnLogin").addEventListener("click", () => {
             title: "All credentials have be validated",
             icon: "success"
         }).then(() => {
-            loadPage("frmHomePage","frmLogin")
+            // Changed to use window.location.href instead of loadPage
             localStorage.setItem("isLoggedIn", 'true')
             localStorage.setItem('userEmail', strEmail)
+            window.location.href = "home.html"
         })
     }
 })
