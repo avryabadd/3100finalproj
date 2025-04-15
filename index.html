@@ -29,12 +29,14 @@
                 <input id="text-LoginPassword" class="form-control mt-2" type="password" placeholder="password" aria-label="password">
                 <button type="button" id="togglePassword_Login" class="btn btn-outline-light mt-2">Show Password</button>
                 <button class="btn btn-primary col-12 mt-2" type="button" id="btnLogin">Log In</button>
-                <button class="btn btn-link col-12 mt-0" type="button" id="btnSwapRegister">Need an account, register here</button>
+                <div class="d-flex justify-content-between mt-2">
+                    <button class="btn btn-link" type="button" id="btnSwapRegister">Need an account?</button>
+                    <button class="btn btn-link" type="button" id="btnForgotPassword">Forgot Password?</button>
+                </div>
             </div>
         </form>
 
         <form id="frmRegister" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
-
             <h1 class="text-center mt-2 mb-3 fw-bold text-primary">RateMyGroup</h1>
 
             <label for="txtFirstName" class="required">First Name</label>
@@ -73,7 +75,20 @@
 
             <button id="studentRegister" type="button" class="btn-primary mt-2"> Register </button>
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
+        </form>
 
+        <!-- Simplified Forgot Password Form -->
+        <form id="frmForgotPassword" class="card col-12 col-md-5 col-lg-4" style="display: none;">
+            <div class="card-body">
+                <h1 class="text-center mb-0 text-primary">RateMyGroup</h1>
+                <h3 class="text-center mb-4">Password Recovery</h3>
+                <p class="text-center">Enter your email address to verify your account</p>
+                <input id="text-RecoveryEmail" class="form-control" type="email" placeholder="user@email.com" aria-label="email">
+                <div class="d-grid gap-2 mt-3">
+                    <button class="btn btn-primary" type="button" id="btnVerifyEmail">Verify Email</button>
+                    <button class="btn btn-outline-secondary" type="button" id="btnBackToLogin">Back to Login</button>
+                </div>
+            </div>
         </form>
     </div>
     
@@ -81,5 +96,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="Page_switching.js"></script>
     <script src="loginregister.js"></script>
+    <script src="password_recovery.js"></script>
 </body>
 </html>
