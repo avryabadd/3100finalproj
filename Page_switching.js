@@ -106,4 +106,10 @@ $('#Btn_Instructor_review_reviews').on('click', function () {
   document.querySelector('#Btn_Student_reports').addEventListener('click', () => {
     loadPage_student("Student-page-reports", strCurrentStudentPage);
   });
+  document.querySelector('#btnForgotPasswordSwitch').addEventListener('click', () => {
+    loadPage('frmForgotPassword',strCurrentPage)
+  })
+  document.querySelector('#btnBackToLogin').addEventListener('click',()=>{
+    loadPage('frmLogin',strCurrentPage)
+  })
   
