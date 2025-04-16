@@ -1,5 +1,7 @@
 let strCurrentPage = "frmLogin"
 let strCurrentInstructorPage="Instructor-page-dashboard"
+let strCurrentStudentPage = "Student-page-dashboard";
+
 $('#btnStudentLoginSwitch').on('click',function(){
     loadPage("frmLogin","frmRegister")
 })
@@ -77,5 +79,31 @@ $('#Btn_Instructor_review_reviews').on('click', function () {
     loadPage_instructor("Instructor-page-review-reviews", strCurrentInstructorPage);
     $('#sidebar .btn').removeClass('active');
     $(this).addClass('active');
+  });
+
+
+  function loadPage_student(strnewpage, stroldpage) {
+    $(`#${stroldpage}`).slideUp('slow')
+    $(`#${strnewpage}`).slideDown('fast')
+    strCurrentStudentPage = strnewpage;
+  }
+  document.querySelector('#Btn_Student_dashboard').addEventListener('click', () => {
+    loadPage_student("Student-page-dashboard", strCurrentStudentPage);
+  });
+  
+  document.querySelector('#Btn_Student_complete').addEventListener('click', () => {
+    loadPage_student("Student-page-complete", strCurrentStudentPage);
+  });
+  
+  document.querySelector('#Btn_Student_scores').addEventListener('click', () => {
+    loadPage_student("Student-page-scores", strCurrentStudentPage);
+  });
+  
+  document.querySelector('#Btn_Student_feedback').addEventListener('click', () => {
+    loadPage_student("Student-page-feedback", strCurrentStudentPage);
+  });
+  
+  document.querySelector('#Btn_Student_reports').addEventListener('click', () => {
+    loadPage_student("Student-page-reports", strCurrentStudentPage);
   });
   

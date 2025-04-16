@@ -85,8 +85,70 @@
         </form>
 
         <form id="frmStudentPage" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
-            <h1 class="text-center text-primary mb-4">Hi Student</h1>
-            <button type="button" class="btn btn-outline-danger mt-4 logout-btn">Logout</button>
+          <div class="d-flex" style="height: 100vh;">
+                      <!-- Student Sidebar -->
+            <div id="Student_sidebar" class="bg-dark text-white d-flex flex-column align-items-center p-3" style="width: 80px;">
+              <button id="Btn_Student_dashboard" class="btn btn-dark my-2" type="button" title="Dashboard">🏠</button>
+              <button id="Btn_Student_complete" class="btn btn-dark my-2" type="button" title="Complete Review">📝</button>
+              <button id="Btn_Student_scores" class="btn btn-dark my-2" type="button" title="Review Scores">📊</button>
+              <button id="Btn_Student_feedback" class="btn btn-dark my-2" type="button" title="Peer Feedback">📢</button>
+              <button id="Btn_Student_reports" class="btn btn-dark my-2" type="button" title="Reports">📈</button>
+              <button class="btn btn-danger mt-auto logout-btn" type="button">🚪</button>
+            </div>
+            <div id="Student_mainContent" class="p-4 flex-grow-1 bg-light">
+              <div id="Student-page-dashboard" class="page-section" style="display: block;">
+                <h3>Select a section from the sidebar to get started.</h3>
+              </div>
+
+              <div id="Student-page-complete" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Complete a Peer Review</h3>
+              
+                <div class="mb-3">
+                  <label for="selectPeer" class="form-label">Select a peer to review</label>
+                  <select id="selectPeer" class="form-select">
+                    <option selected disabled>Select...</option>
+                  </select>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="reviewScore" class="form-label">Score (0-100)</label>
+                  <input type="number" id="reviewScore" class="form-control" min="0" max="100">
+                </div>
+              
+                <div class="mb-3">
+                  <label for="privateFeedback" class="form-label">Private Feedback (Instructor-only)</label>
+                  <textarea id="privateFeedback" class="form-control" rows="3"></textarea>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="publicFeedback" class="form-label">Public Feedback (Visible to all)</label>
+                  <textarea id="publicFeedback" class="form-control" rows="3"></textarea>
+                </div>
+              
+                <button id="btnsubmitReview" type="button" class="btn btn-primary">Submit Review</button>
+              </div>
+              <div id="Student-page-scores" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Your Review Scores</h3>
+                <ul class="list-group" id="reviewScoresList">
+                  <li>NA</li>
+                </ul>
+              </div>
+              <div id="Student-page-feedback" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Public Feedback from Peers</h3>
+                <ul class="list-group" id="publicFeedbackList">
+                  <li>NA</li>
+                </ul>
+              </div>
+              <div id="Student-page-reports" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Feedback & Scores Summary</h3>
+                <p id="overallScore" class="lead">Overall Score: N/A</p>
+                <h5>Combined Feedback</h5>
+                <ul class="list-group" id="combinedFeedbackList">
+                  <li>NA</li>
+                </ul>
+              </div>
+            </div>
+         </div>
         </form>
 
         <form id="frmInstructorPage" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
@@ -171,12 +233,12 @@
                         <label for="txtStudentEmail" class="form-label">Add Student Manualy Email</label>
                         <input type="email" id="txtStudentEmail" class="form-control" placeholder="student@school.edu">
                     </div>
-                    <button id="btnAddStudent" class="btn btn-primary">Add Student</button>
+                    <button id="btnAddStudent" type="button" class="btn btn-primary">Add Student</button>
                     <div class="mt-3">
                         <label class="form-label">Share Join Code:</label>
                         <div class="input-group">
                         <input type="text" id="txtJoinCode" class="form-control" placeholder="ABCD1234" >
-                        <button type="button" class="btn btn-secondary" id="btnSendJoinCode">Send</button>
+                        <button type="button" type="button" class="btn btn-secondary" id="btnSendJoinCode">Send</button>
                         </div>
                     </div>
                 </div>
@@ -291,8 +353,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="Page_switching.js"></script>
     <script src="loginregister.js"></script>
+    <script src="page_teacher_course.js"></script>
     <script src="page_teacher_reviews.js"></script>
     <script src="page_teacher_team.js"></script>
+    <script src="student_review.js"></script>
 
 </body>
 </html>
