@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Proj</title>
+    <title>RateMyGroup</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
     <!-- jQuery (required) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
 </head>
 <body>
-    <!--Start the card body for student registration-->
+    <!--Login and registration forms-->
     <div class="d-flex justify-content-center align-items-center vh-100">
-
+        <!-- Login Form -->
         <form class="card col-12 col-md-5 col-lg-4" id="frmLogin">
             <div class="card-body">
                 <h1 class="text-center mb-0 text-primary">RateMyGroup</h1>
@@ -36,6 +30,7 @@
             </div>
         </form>
 
+        <!-- Registration Form -->
         <form id="frmRegister" class="card col-12 col-md-4 col-lg-6 mt-4" style="display: none;">
             <h1 class="text-center mt-2 mb-3 fw-bold text-primary">RateMyGroup</h1>
 
@@ -77,7 +72,7 @@
             <button id="btnStudentLoginSwitch" type="button" class="btn btn-link mt-2"> Already Have an Account? Login Here </button>
         </form>
 
-        <!-- Simplified Forgot Password Form -->
+        <!-- Forgot Password Form -->
         <form id="frmForgotPassword" class="card col-12 col-md-5 col-lg-4" style="display: none;">
             <div class="card-body">
                 <h1 class="text-center mb-0 text-primary">RateMyGroup</h1>

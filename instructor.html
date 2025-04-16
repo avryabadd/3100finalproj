@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Proj</title>
+    <title>RateMyGroup - Instructor</title>
     <link rel="stylesheet" href="styles.css">
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -17,206 +17,207 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
 </head>
 <body>
-    <form id="frmInstructorPage">
-        <div class="d-flex" style="height: 100vh;">   
-            <!-- Sidebar -->
-            <div id="sidebar" class="bg-dark text-white d-flex flex-column align-items-center p-3"
-            style="width: 80px; border-right: 1px solid #ccc;">
+    <div class="d-flex" style="height: 100vh;">   
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark text-white d-flex flex-column align-items-center p-3"
+        style="width: 80px; border-right: 1px solid #ccc;">
 
-                <!-- Navigation Buttons -->
-                <button id="Btn_Instructor_dashboard" type="button" class="btn btn-dark my-2 active" data-page="dashboard" title="Dashboard">🏠</button>
-                <button id="Btn_Instructor_courses" type="button" class="btn btn-dark nav-btn my-2" data-page="courses" title="Courses">📚</button>
-                <button id="Btn_Instructor_students" type="button" class="btn btn-dark nav-btn my-2" data-page="students" title="Students">👨‍🎓</button>
-                <button id="Btn_Instructor_teams" type="button" class="btn btn-dark nav-btn my-2" data-page="teams" title="Teams">👥</button>
-                <button id="Btn_Instructor_reviews" type="button" class="btn btn-dark nav-btn my-2" data-page="reviews" title="Reviews">📝</button>
-                <button id="Btn_Instructor_review_reviews" class="btn btn-dark my-2" type="button" title="Review Reviews">📄</button>
-                <button id="Btn_Instructor_reports" type="button" class="btn btn-dark nav-btn my-2" data-page="reports" title="Reports">📊</button>
-                
+            <!-- Navigation Buttons -->
+            <button id="Btn_Instructor_dashboard" type="button" class="btn btn-dark my-2 active" data-page="dashboard" title="Dashboard">🏠</button>
+            <button id="Btn_Instructor_courses" type="button" class="btn btn-dark nav-btn my-2" data-page="courses" title="Courses">📚</button>
+            <button id="Btn_Instructor_students" type="button" class="btn btn-dark nav-btn my-2" data-page="students" title="Students">👨‍🎓</button>
+            <button id="Btn_Instructor_teams" type="button" class="btn btn-dark nav-btn my-2" data-page="teams" title="Teams">👥</button>
+            <button id="Btn_Instructor_reviews" type="button" class="btn btn-dark nav-btn my-2" data-page="reviews" title="Reviews">📝</button>
+            <button id="Btn_Instructor_review_reviews" class="btn btn-dark my-2" type="button" title="Review Reviews">📄</button>
+            <button id="Btn_Instructor_reports" type="button" class="btn btn-dark nav-btn my-2" data-page="reports" title="Reports">📊</button>
+            
 
-                <!-- Logout Button -->
-                <button class="btn btn-danger mt-auto logout-btn" title="Logout">🚪</button>
-            </div>
+            <!-- Logout Button -->
+            <button class="btn btn-danger mt-auto logout-btn" title="Logout">🚪</button>
+        </div>
 
-            <!-- Main Content Area (to the right of sidebar) -->
-            <div id="Instructor_mainContent" class="p-4 flex-grow-1 bg-light">
+        <!-- Main Content Area (to the right of sidebar) -->
+        <div id="Instructor_mainContent" class="p-4 flex-grow-1 bg-light">
 
-                <!-- Dashboard / Welcome Page -->
-                <div id="Instructor-page-dashboard" class="page-section">
+            <!-- Dashboard / Welcome Page -->
+            <div id="Instructor-page-dashboard" class="page-section">
                 <h1 class="text-primary">Welcome to the Instructor Dashboard</h1>
                 <p>Select a section from the sidebar to get started.</p>
                 <p>Features do not actually work until backend created</p>
+            </div>
+        
+            <!-- Page: Courses -->
+            <div id="Instructor-page-courses" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-3">Create a New Course</h3>
+                <div class="mb-3">
+                    <label for="txtCourseName" class="form-label">Course Name</label>
+                    <input type="text" id="txtCourseName" class="form-control" placeholder="e.g., Intro to Web Dev">
                 </div>
-            
-                <!-- Page: Courses -->
-                <div id="Instructor-page-courses" class="page-section" style="display: none;">
-                    <h3 class="text-primary mb-3">Create a New Course</h3>
-                    <div class="mb-3">
-                        <label for="txtCourseName" class="form-label">Course Name</label>
-                        <input type="text" id="txtCourseName" class="form-control" placeholder="e.g., Intro to Web Dev">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtCourseCode" class="form-label">Course Code</label>
-                        <input type="text" id="txtCourseCode" class="form-control" placeholder="e.g., CSC-123">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtselectTerm" class="form-label">Term/Semester</label>
-                        <select id="txtselectTerm" class="form-select">
+                <div class="mb-3">
+                    <label for="txtCourseCode" class="form-label">Course Code</label>
+                    <input type="text" id="txtCourseCode" class="form-control" placeholder="e.g., CSC-123">
+                </div>
+                <div class="mb-3">
+                    <label for="txtselectTerm" class="form-label">Term/Semester</label>
+                    <select id="txtselectTerm" class="form-select">
                         <option selected disabled>Choose...</option>
                         <option>Spring 2025</option>
                         <option>Summer 2025</option>
                         <option>Fall 2025</option>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         <label for="startDate" class="form-label">Start Date</label>
                         <input type="date" id="startDate" class="form-control">
-                        </div>
-                        <div class="col-md-6 mb-3">
+                    </div>
+                    <div class="col-md-6 mb-3">
                         <label for="endDate" class="form-label">End Date</label>
                         <input type="date" id="endDate" class="form-control">
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtCourseDesc" class="form-label">Course Description</label>
-                        <textarea id="txtCourseDesc" class="form-control" rows="3" placeholder="Brief overview of the course..."></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary" id="BtnCreateCourse">Create Course</button>
-            
-                    <!-- Course list -->
-                    <div id="courseList" class="mt-4">
-                        <h5>Your Courses:</h5>
-                        <ul class="list-group" id="ulCourses">
-                        <!-- Course items will appear here -->
-                        </ul>
                     </div>
                 </div>
-            
-                <!-- Page: Students -->
-                <div id="Instructor-page-students" class="page-section" style="display: none;">
-                    <h3 class="text-primary mb-3">Manage Students</h3>
-                    <div class="mb-3">
-                        <label for="txtStudentEmail" class="form-label">Add Student Manualy Email</label>
-                        <input type="email" id="txtStudentEmail" class="form-control" placeholder="student@school.edu">
-                    </div>
-                    <button id="btnAddStudent" class="btn btn-primary">Add Student</button>
-                    <div class="mt-3">
-                        <label class="form-label">Share Join Code:</label>
-                        <div class="input-group">
+                <div class="mb-3">
+                    <label for="txtCourseDesc" class="form-label">Course Description</label>
+                    <textarea id="txtCourseDesc" class="form-control" rows="3" placeholder="Brief overview of the course..."></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" id="BtnCreateCourse">Create Course</button>
+        
+                <!-- Course list -->
+                <div id="courseList" class="mt-4">
+                    <h5>Your Courses:</h5>
+                    <ul class="list-group" id="ulCourses">
+                        <!-- Course items will appear here -->
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Page: Students -->
+            <div id="Instructor-page-students" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-3">Manage Students</h3>
+                <div class="mb-3">
+                    <label for="txtStudentEmail" class="form-label">Add Student Manually Email</label>
+                    <input type="email" id="txtStudentEmail" class="form-control" placeholder="student@school.edu">
+                </div>
+                <button id="btnAddStudent" class="btn btn-primary">Add Student</button>
+                <div class="mt-3">
+                    <label class="form-label">Share Join Code:</label>
+                    <div class="input-group">
                         <input type="text" id="txtJoinCode" class="form-control" placeholder="ABCD1234" >
                         <button type="button" class="btn btn-secondary" id="btnSendJoinCode">Send</button>
-                        </div>
                     </div>
                 </div>
+            </div>
+        
+            <!-- Page: Teams -->
+            <div id="Instructor-page-teams" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Create and Manage Teams</h3>
+              
+                <!-- Create Team -->
+                <div class="card p-3 mb-4">
+                    <label for="txt_teamName" class="form-label">Team Name</label>
+                    <input type="text" id="txt_teamName" class="form-control mb-3" placeholder="e.g., Team 1">
+                
+                    <label for="txt_student_team" class="form-label">Add Student to Team</label>
+                    <input type="text" id="txt_student_team" class="form-control mb-3" placeholder="e.g., hi@tntech.edu">
+                
+                    <button id="btnAddToTeam" type="button" class="btn btn-primary me-2 mb-4">Add to Team</button>
+                    <button id="btnSaveTeam" type="button" class="btn btn-success">Save Team</button>
+                </div>
+              
+                <!-- Team List -->
+                <div id="teamList">
+                    <h5>Teams Created:</h5>
+                    <div class="list-group" id="listDisplayTeams">
+                        <!-- Teams will be displayed here -->
+                    </div>
+                </div>
+            </div>
             
-                <!-- Page: Teams -->
-                <div id="Instructor-page-teams" class="page-section" style="display: none;">
-                    <h3 class="text-primary mb-4">Create and Manage Teams</h3>
+            <!-- Page: Reviews -->
+            <div id="Instructor-page-reviews" class="page-section" style="display: none;">
+                <div id="questionManager">
+                    <h3 class="text-primary mb-3">Manage Review Questions</h3>
                   
-                    <!-- Create Team -->
+                    <!-- Create/Edit Question Form -->
                     <div class="card p-3 mb-4">
-                      <label for="txt_teamName" class="form-label">Team Name</label>
-                      <input type="text" id="txt_teamName" class="form-control mb-3" placeholder="e.g., Team 1">
-                  
-                      <label for="txt_student_team" class="form-label">Add Student to Team</label>
-                      <input type="text" id="txt_student_team" class="form-control mb-3"  placeholder="e.g., hi@tntech.edu">
-                  
-                      <button id="btnAddToTeam" type = "button" class="btn btn-primary me-2 mb-4">Add to Team</button>
-                      <button id="btnSaveTeam" type = "button" class="btn btn-success">Save Team</button>
-                    </div>
-                  
-                    <!-- Team List -->
-                    <div id="teamList">
-                      <h5>Teams Created:</h5>
-                      <div class="list-group" id="listDisplayTeams">
-                        
-                      </div>
-                    </div>
-                </div>
-                  
-            
-                <!-- Page: Reviews -->
-                <div id="Instructor-page-reviews" class="page-section" style="display: none;">
-                    <div id="questionManager">
-                        <h3 class="text-primary mb-3">Manage Review Questions</h3>
-                      
-                        <!-- Create/Edit Question Form -->
-                        <div class="card p-3 mb-4">
-                          <label for="txtquestion_text" class="form-label">Question Text</label>
-                          <input type="text" id="txtquestion_text" class="form-control mb-2" placeholder="Enter your question...">
-                      
-                          <label for="select_question_type" class="form-label">Question Type</label>
-                          <select id="select_question_type" class="form-select mb-3">
+                        <label for="txtquestion_text" class="form-label">Question Text</label>
+                        <input type="text" id="txtquestion_text" class="form-control mb-2" placeholder="Enter your question...">
+                    
+                        <label for="select_question_type" class="form-label">Question Type</label>
+                        <select id="select_question_type" class="form-select mb-3">
                             <option value="likert">Likert Scale</option>
                             <option value="multiple_choice">Multiple Choice</option>
                             <option value="short_answer">Short Answer</option>
-                          </select>
-                      
-                          <button id="btn_add_Question" type="button" class="btn btn-success">Add Question</button>
-                          <button id="btn_update_Question" type="button" class="btn btn-primary d-none">Update Question</button>
-                        </div>
-                        <!-- List of Questions -->
-                        <h3>Questions Created:</h3>
-                        <ul id="questionList" class="list-group"></ul>
-                    </div>                      
-                </div>
-            
-                <!-- Review of all reviews -->
-                <div id="Instructor-page-review-reviews" class="page-section" style="display: none;">
-                    <h3 class="text-primary mb-4">Review of Reviews</h3>
-                  
-                    <div class="row">
-                      <!-- Private Reviews -->
-                      <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                          <div class="card-header bg-secondary text-white">
-                            Private Reviews
-                          </div>
-                          <ul class="list-group list-group-flush" id="privateReviewList">
-                            <li>Dummy data</li>
-                          </ul>
-                        </div>
-                      </div>
-                  
-                      <!-- Public Reviews -->
-                      <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                          <div class="card-header bg-secondary text-white">
-                                Public Reviews
-                          </div>
-                          <ul class="list-group list-group-flush" id="publicReviewList">
-                            <li>Dummy data</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <!-- Page: Reports -->
-                <div id="Instructor-page-reports" class="page-section" style="display: none;">
-                    <h3 class="text-primary mb-4">Instructor Reports</h3>
-                  
-                    <!-- Completion Rate Summary -->
-                    <div class="mb-4">
-                      <h5>Completion Rates</h5>
-                      <ul id="completionRateList" class="list-group list-group-flush"></ul>
-                    </div>
-                  
-                    <!-- Average Score Summary -->
-                    <div class="mb-4">
-                      <h5>Average Scores (100-point scale)</h5>
-                      <ul id="avgScoreList" class="list-group list-group-flush"></ul>
-                    </div>
-                  
-                    <!-- All Scores Table in progress-->
+                        </select>
                     
+                        <button id="btn_add_Question" type="button" class="btn btn-success">Add Question</button>
+                        <button id="btn_update_Question" type="button" class="btn btn-primary d-none">Update Question</button>
+                    </div>
+                    <!-- List of Questions -->
+                    <h3>Questions Created:</h3>
+                    <ul id="questionList" class="list-group"></ul>
+                </div>                      
+            </div>
+        
+            <!-- Review of all reviews -->
+            <div id="Instructor-page-review-reviews" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Review of Reviews</h3>
+              
+                <div class="row">
+                    <!-- Private Reviews -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-secondary text-white">
+                                Private Reviews
+                            </div>
+                            <ul class="list-group list-group-flush" id="privateReviewList">
+                                <li class="list-group-item">No private reviews yet.</li>
+                            </ul>
+                        </div>
+                    </div>
+              
+                    <!-- Public Reviews -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-secondary text-white">
+                                Public Reviews
+                            </div>
+                            <ul class="list-group list-group-flush" id="publicReviewList">
+                                <li class="list-group-item">No public reviews yet.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+              
+            <!-- Page: Reports -->
+            <div id="Instructor-page-reports" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Instructor Reports</h3>
+              
+                <!-- Completion Rate Summary -->
+                <div class="mb-4">
+                    <h5>Completion Rates</h5>
+                    <ul id="completionRateList" class="list-group list-group-flush">
+                        <li class="list-group-item">No data available yet.</li>
+                    </ul>
+                </div>
+              
+                <!-- Average Score Summary -->
+                <div class="mb-4">
+                    <h5>Average Scores (100-point scale)</h5>
+                    <ul id="avgScoreList" class="list-group list-group-flush">
+                        <li class="list-group-item">No data available yet.</li>
+                    </ul>
+                </div>
+                <!-- All Scores Table in progress-->
+            </div>
         </div>
-    </form>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="Page_switching.js"></script>
+    <script src="Page-switching.js"></script>
+    <script src="page_teacher_course.js"></script>
     <script src="page_teacher_reviews.js"></script>
     <script src="page_teacher_team.js"></script>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Proj</title>
+    <title>RateMyGroup - Student</title>
     <link rel="stylesheet" href="styles.css">
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -17,15 +17,79 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <form id="frmStudentPage" class="card col-12 col-md-4 col-lg-6 mt-4">
-            <h1 class="text-center text-primary mb-4">Hi Student</h1>
-            <button type="button" class="btn btn-outline-danger mt-4 logout-btn">Logout</button>
-        </form>
+    <div class="d-flex" style="height: 100vh;">
+        <!-- Student Sidebar -->
+        <div id="Student_sidebar" class="bg-dark text-white d-flex flex-column align-items-center p-3" style="width: 80px;">
+            <button id="Btn_Student_dashboard" class="btn btn-dark my-2 active" type="button" title="Dashboard">🏠</button>
+            <button id="Btn_Student_complete" class="btn btn-dark my-2" type="button" title="Complete Review">📝</button>
+            <button id="Btn_Student_scores" class="btn btn-dark my-2" type="button" title="Review Scores">📊</button>
+            <button id="Btn_Student_feedback" class="btn btn-dark my-2" type="button" title="Peer Feedback">📢</button>
+            <button id="Btn_Student_reports" class="btn btn-dark my-2" type="button" title="Reports">📈</button>
+            <button class="btn btn-danger mt-auto logout-btn" type="button" title="Logout">🚪</button>
+        </div>
+        
+        <div id="Student_mainContent" class="p-4 flex-grow-1 bg-light">
+            <div id="Student-page-dashboard" class="page-section">
+                <h1 class="text-primary">Welcome to the Student Dashboard</h1>
+                <p>Select a section from the sidebar to get started.</p>
+            </div>
+
+            <div id="Student-page-complete" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Complete a Peer Review</h3>
+            
+                <div class="mb-3">
+                    <label for="selectPeer" class="form-label">Select a peer to review</label>
+                    <select id="selectPeer" class="form-select">
+                        <option selected disabled>Select...</option>
+                    </select>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="reviewScore" class="form-label">Score (0-100)</label>
+                    <input type="number" id="reviewScore" class="form-control" min="0" max="100">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="privateFeedback" class="form-label">Private Feedback (Instructor-only)</label>
+                    <textarea id="privateFeedback" class="form-control" rows="3"></textarea>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="publicFeedback" class="form-label">Public Feedback (Visible to all)</label>
+                    <textarea id="publicFeedback" class="form-control" rows="3"></textarea>
+                </div>
+            
+                <button id="btnsubmitReview" type="button" class="btn btn-primary">Submit Review</button>
+            </div>
+            
+            <div id="Student-page-scores" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Your Review Scores</h3>
+                <ul class="list-group" id="reviewScoresList">
+                    <li class="list-group-item">No scores available yet.</li>
+                </ul>
+            </div>
+            
+            <div id="Student-page-feedback" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Public Feedback from Peers</h3>
+                <ul class="list-group" id="publicFeedbackList">
+                    <li class="list-group-item">No feedback available yet.</li>
+                </ul>
+            </div>
+            
+            <div id="Student-page-reports" class="page-section" style="display: none;">
+                <h3 class="text-primary mb-4">Feedback & Scores Summary</h3>
+                <p id="overallScore" class="lead">Overall Score: N/A</p>
+                <h5>Combined Feedback</h5>
+                <ul class="list-group" id="combinedFeedbackList">
+                    <li class="list-group-item">No feedback available yet.</li>
+                </ul>
+            </div>
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="Page_switching.js"></script>
+    <script src="page-switching.js"></script>
+    <script src="student_review.js"></script>
 </body>
 </html>

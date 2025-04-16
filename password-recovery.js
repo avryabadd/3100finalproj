@@ -1,34 +1,6 @@
-// Toggle password visibility for reset password page
-if (document.getElementById('toggleNewPassword')) {
-    document.getElementById('toggleNewPassword').addEventListener('click', function() {
-        const passwordInput = document.getElementById('txtNewPassword');
-        const isPassword = passwordInput.type === 'password';
-        passwordInput.type = isPassword ? 'text' : 'password';
-        this.textContent = isPassword ? 'Hide Password' : 'Show Password';
-    });
-}
-
-if (document.getElementById('toggleConfirmNewPassword')) {
-    document.getElementById('toggleConfirmNewPassword').addEventListener('click', function() {
-        const passwordInput = document.getElementById('txtConfirmNewPassword');
-        const isPassword = passwordInput.type === 'password';
-        passwordInput.type = isPassword ? 'text' : 'password';
-        this.textContent = isPassword ? 'Hide Password' : 'Show Password';
-    });
-}
-
-// Handle forgot password functionality
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     // Only run this code if we're on the index page with the forgot password button
-    if (document.getElementById('btnForgotPassword')) {
-        document.getElementById('btnForgotPassword').addEventListener('click', function() {
-            loadPage('frmForgotPassword', 'frmLogin');
-        });
-
-        document.getElementById('btnBackToLogin').addEventListener('click', function() {
-            loadPage('frmLogin', 'frmForgotPassword');
-        });
-
+    if (document.getElementById('btnVerifyEmail')) {
         document.getElementById('btnVerifyEmail').addEventListener('click', function() {
             const email = document.getElementById('text-RecoveryEmail').value.trim();
             const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -122,12 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         text: "Your password has been updated. You can now log in with your new password.",
                         icon: "success"
                     }).then(() => {
+                        // Use the loadPage function from loginregister.js
                         loadPage('frmLogin', 'frmForgotPassword');
                     });
                 });
                 
                 // Set up cancel button handler
                 document.getElementById('btnCancelReset').addEventListener('click', function() {
+                    // Use the loadPage function from loginregister.js
                     loadPage('frmLogin', 'frmForgotPassword');
                 });
             });
