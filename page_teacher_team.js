@@ -1,5 +1,5 @@
 // Email validation regex
-const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+const regxEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
 
 let currentTeam = { name: "", members: [] };
 let allTeams = [];
@@ -16,7 +16,7 @@ document.querySelector('#btnAddToTeam').addEventListener('click', () => {
     strMessage += "Student email must not be empty.<br>";
   }
 
-  if (!regEmail.test(strstudentEmail)) {
+  if (!regxEmail.test(strstudentEmail)) {
     blnError = true;
     strMessage += "Please enter a valid student email.<br>";
   }
